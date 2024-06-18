@@ -1,5 +1,4 @@
 # rag.py
-import os
 import openai
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import FAISS
@@ -8,7 +7,7 @@ from langchain.llms import OpenAI
 from connections import driver, run_cypher_query
 
 # Set OpenAI API key
-openai_api_key = os.environ['OPENAI_API_KEY']
+openai_api_key = 'sk-proj-sbsW3pa4EZnrHQuzhO9cT3BlbkFJtHwUQ5thzJ68uf0Vg4QU'  # Replace with your OpenAI API key
 openai.api_key = openai_api_key
 
 # Initialize OpenAI Embeddings

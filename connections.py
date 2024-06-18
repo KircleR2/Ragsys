@@ -1,11 +1,10 @@
 # connections.py
-import os
 from neo4j import GraphDatabase
 
 # Neo4j connection details
-NEO4J_URI = os.environ['NEO4J_URI']
-NEO4J_USER = os.environ['NEO4J_USER']
-NEO4J_PASSWORD = os.environ['NEO4J_PASSWORD']         
+NEO4J_URI = "neo4j+s://0b0c911c.databases.neo4j.io"  
+NEO4J_USER = "neo4j"                 
+NEO4J_PASSWORD = "RGZW9GaL2VDISdVOfylZJo-E7uLca5vGKjQVcE0ehcQ"          
 
 # Function to connect to Neo4j
 def get_neo4j_connection(uri, user, password):
