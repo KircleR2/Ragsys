@@ -1,18 +1,10 @@
 # connections.py
-import os
 from neo4j import GraphDatabase
 
-# Function to get environment variables with error handling
-def get_env_variable(var_name):
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        raise KeyError(f"Environment variable '{var_name}' not set")
-
 # Neo4j connection details
-NEO4J_URI = get_env_variable('NEO4J_URI')
-NEO4J_USER = get_env_variable('NEO4J_USER')
-NEO4J_PASSWORD = get_env_variable('NEO4J_PASSWORD')
+NEO4J_URI = "neo4j+s://0b0c911c.databases.neo4j.io"  
+NEO4J_USER = "neo4j"                 
+NEO4J_PASSWORD = "RGZW9GaL2VDISdVOfylZJo-E7uLca5vGKjQVcE0ehcQ"          
 
 # Function to connect to Neo4j
 def get_neo4j_connection(uri, user, password):
@@ -27,3 +19,4 @@ def run_cypher_query(driver, query):
 
 # Initialize Neo4j connection
 driver = get_neo4j_connection(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
+# WORKING FILE
