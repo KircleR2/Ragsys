@@ -7,8 +7,15 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.llms import OpenAI
 from connections import driver, run_cypher_query
 
+# Function to get environment variables with error handling
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        raise KeyError(f"Environment variable '{var_name}' not set")
+
 # Set OpenAI API key
-openai_api_key = 'sk-proj-sbsW3pa4EZnrHQuzhO9cT3BlbkFJtHwUQ5thzJ68uf0Vg4QU'  # Replace with your OpenAI API key
+openai_api_key = get_env_variable('OPENAI_API_KEY')
 openai.api_key = openai_api_key
 
 # Initialize OpenAI Embeddings
