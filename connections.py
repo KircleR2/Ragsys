@@ -1,4 +1,5 @@
 # connections.py
+import os
 from neo4j import GraphDatabase
 
 # Neo4j connection details

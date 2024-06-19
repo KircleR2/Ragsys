@@ -1,4 +1,5 @@
 # rag.py
+import os
 import openai
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import FAISS
