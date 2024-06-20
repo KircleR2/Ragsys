@@ -17,7 +17,7 @@ The RAG Chatbot application is designed to generate email content in accordance 
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/KircleR2/Ragsys/rag-chatbot.git
+    git clone https://github.com/KircleR2/Ragsys.git
     cd rag-chatbot
     ```
 
