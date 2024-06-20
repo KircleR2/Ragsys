@@ -21,8 +21,8 @@ embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 # Function to decide email type based on user query
 def decide_email_type(query):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = openai.chat.completions.create(
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are a helpful assistant that decides the type of email based on user queries."},
             {"role": "user", "content": f"Determine the email type (Trial Onboarding, Follow Up, Promotion) for the following query: {query}"}
@@ -104,8 +104,8 @@ def generate_email_content(email_type, qa_chain, query, verbal_identity, descrip
 def final_review(content, verbal_identity, descriptions, relationships):
     description_text = "\n\n".join(descriptions)
     relationship_text = "\n\n".join(relationships)
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = openai.chat.completions.create(
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are a helpful assistant that reviews email content for quality and consistency."},
             {"role": "user", "content": f"Review the following email content for quality and consistency based on the verbal identity, descriptions, and relationships:\n\nVerbal Identity:\n{verbal_identity}\n\nDescriptions:\n{description_text}\n\nRelationships:\n{relationship_text}\n\nEmail Content:\n{content}"}
