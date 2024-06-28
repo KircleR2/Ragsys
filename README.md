@@ -29,6 +29,15 @@ The RAG Chatbot application is designed to generate email content in accordance 
 3. **Set up your Neo4j database**:
     - Ensure you have a Neo4j database running.
     - Update the `connections.py` file with your Neo4j connection details.
+    - Restore the Neo4j dump file:
+        1. Place the dump file (e.g., `rag_Sample_Angel.dump`) in a known location.
+        2. Start the Neo4j server.
+        3. Use the following commands to restore the database:
+            ```sh
+            neo4j stop
+            neo4j-admin load --from=/path/to/rag_Sample_Angel.dump --database=neo4j --force
+            neo4j start
+            ```
 
 4. **Set your OpenAI API key**:
     - Add your OpenAI API key to the `rag.py` file:
